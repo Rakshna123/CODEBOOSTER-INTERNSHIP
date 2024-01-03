@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <title>Loading Button Animation</title>
+</head>
+<body class="body">
+<style>
+ .body {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+.head3{
+    margin-top: 70px;
+    margin-left: 680px;
+    margin-bottom: 50px;
+    color: purple;
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: papyrus;
+  }
+  .nike{
+    color:purple;
+    font-size: 50px;
+    font-family: cursive;
+    margin-left: 20px;
+    font-weight: bold;
+  }
+  img{
+    margin-left: 150px;
+    margin-top: 20px;
+  }
+  img:hover{
+    transform: scale(1.1);
+  }
+  .img2,.img3{
+    display: none;
+  }
+  .logo{
+    margin-left: 40px;
+  }
+  .para{
+    color: black;
+    font-size: 25px;
+    margin-left: 20px;
+  }
+  .but{
+  border-radius: 50%;
+  width:80px;
+  height: 80px;
+  margin-left: 30px;
+  border: 3px solid black;
+  box-shadow: 7px 7px ;
+  }
+  .but:hover{
+  transform: scale(1.1);
+  }
+  .colour{
+    margin-top: 60px;
+    margin-left: 30px;
+    padding: 10px;
+    font-size: 35px;
+    color: darkgreen;
+    font-weight: bolder;
+    font-family: cursive;
+  }
+  .white{
+    background-color: white;
+  }
+  .brown{
+    background-color: rgba(148, 104, 47, 0.908);
+  }
+  .orange{
+    background-color:rgb(209, 86, 3);
+  }
+  .div1{
+    margin: auto;
+    width: 600px;
+    height: 940px;
+    background-color: pink;
+    /* background-color: rgb(246, 210, 144); */
+    /* margin-left: 700px; */
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px 10px gray;
+    border: 4px solid deeppink;
+  }
+  /* .div1:hover{
+    transform: scale(1.1);
+  } */
+  .cart{
+    padding: 5px;
+    width:300px;
+    height: 80px;
+    margin-top: 50px;
+    margin-left: 150px;
+    font-size: 30px;
+    background-color: rgba(250, 128, 114, 0.966);
+    color:black;
+    box-shadow: 10px 10px gray;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    border:5px solid black;
+  }
+  .cart:hover{
+    transform: scale(1.2);
+  }
+</style>
+<h1 class="head3">ANIMATED PRODUCT CARD</h1>
+
+<div class="div1">
+  <div><img class="logo" src="nike.png" alt="" style="height:50px;width:55px"></div>
+  <img id="image1" src="shoewhite.webp" alt="" style="height: 300px;width: 350px;" class="img1">
+  <img id="image2" src="shoebrown.webp" alt="" style="height: 300px;width: 350px;" class="img2">
+  <img id="image3" src="shoeorange.webp" alt="" style="height: 300px;width: 350px;" class="img3">
+<h1 class="nike"> Nike Gaze 2x</h1>
+<p class="para">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quaerat quos vitae veniam iure porro saepe totam vel molestias, </p>
+  <div  class="colour">Colour: </div>
+    <button id="white" class="white but"></button>
+    <button id="brown" class="brown but"></button>
+    <button id="orange" class="orange but"></button>
+    <div>
+      <button class="cart">Add to Cart</button>
+    </div>
+  </div>
+<script>
+// animated product card
+
+var firstImg = document.getElementById("image1");
+var secondImg = document.getElementById("image2");
+var thirdImg = document.getElementById("image3");
+var btnimg1 = document.getElementById("white");
+var btnimg2 = document.getElementById("brown");
+var btnimg3 = document.getElementById("orange");
+
+btnimg1.addEventListener("click" , image1function);
+function image1function(){
+    firstImg.style.display ="block";
+    secondImg.style.display = "none";
+    thirdImg.style.display = "none";
+}
+btnimg2.addEventListener("click" , image2function);
+function image2function(){
+    firstImg.style.display ="none";
+    secondImg.style.display = "block";
+    thirdImg.style.display = "none";
+}
+btnimg3.addEventListener("click" , image3function);
+function image3function(){
+    firstImg.style.display ="none";
+    secondImg.style.display = "none";
+    thirdImg.style.display = "block";
+}
+</script>
+</body>
+</html>
