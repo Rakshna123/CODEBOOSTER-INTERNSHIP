@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <title>Loading Button Animation</title>
+</head>
+<body class="body">
+<style>
+ .body {
+    /* display: flex; */
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+.container.text{
+    color: salmon;
+    position: relative;
+    font-size: 70px;
+    font-weight: 600;
+}
+
+.text.first{
+   font-size: 70px; 
+   margin-bottom: 80px;
+   margin-left: 0; 
+   color:wheat;
+   
+}
+.text.second{
+    color: salmon;
+    font-size: 70px;
+}
+.text.second::before{
+content: "";
+position: absolute;
+/* top:610px;
+left: 3000px; */
+/* top:0; */
+/* height: 100%;
+width: 100%; */
+/* padding: 5px; */
+height: 100px;
+width: 380px;
+margin-left: 600px;
+background-color:black;
+border-left:2px solid salmon;
+animation: animate 6s steps(12) infinite;
+} 
+@keyframes animate {
+    0%   {left:0px;}
+    25%  { left:200px;}
+    50%  {left:400px;}
+    75%  {left:0px;}
+    100% {left:0px;}
+  }
+</style>
+<h1 class="head2">MULTI TEXT TYPING ANIMATION</h1>
+<div class="container">
+  <span class="text first"><b>I'm a </b></span>
+  <span class="text second"><b></b></span>
+</div> 
+<script>
+// multi text typing
+const text = document.querySelector(".second");
+const textLoad = ()=>{
+    setTimeout(() => {
+        text.textContent = "FreeLancer"
+    }, 0);
+    setTimeout(() => {
+        text.textContent = "Blogger"
+    }, 5000);
+
+    setTimeout(() => {
+        text.textContent = "YouTuber"
+    }, 11000);
+}
+textLoad();
+</script>
+</body>
