@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> 
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
+    <title>Loading Button Animation</title>
+</head>
+<body class="body">
+<style>
+  .body {
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+}
+
+.btn, #loadingContainer {
+    /* display: inline-block; */
+    margin-bottom: 10px;
+    padding: 10px;
+    height:70px;
+    width:200px;
+    margin-left: 900px;
+    margin-top: 100px;
+}
+.btn:hover{
+transform: scale(1.3);
+}
+.head{
+    margin-top: 100px;
+    margin-left: 650px;
+    color: purple;
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: papyrus;
+}
+.head2{
+    margin-top: 50px;
+    margin-left: 680px;
+    margin-bottom: 50px;
+    color: purple;
+    font-weight: bolder;
+    font-size: 40px;
+    font-family: papyrus;
+}
+#loadButton{
+    color:rgb(255, 20, 147);
+    font-family: papyrus;
+    font-size: 25px;
+    background-color: rgba(130, 212, 245, 0.944);
+    border-radius: 5%;
+    box-shadow: 7px 7px 7px 7px gray;
+}
+.done{
+    color:orangered;
+    font-family: papyrus;
+    background-color: rgba(172, 255, 47, 0.936);
+    font-size: 25px;
+    border-radius: 5%;
+    font-weight: bolder;
+    height:70px;
+    width: 200px;
+    padding: 5px;
+    box-shadow: 7px 7px 7px 7px gray;
+    border: none;
+}
+.loading {
+    box-shadow: 7px 7px 7px 7px gray;
+    background-color: rgb(228, 60, 223);
+    color: aqua;
+    font-weight: bolder;
+    font-family: papyrus;
+    border-radius:5% ;
+    font-size: 25px;
+    height:70px;
+    width: 200px;
+    padding: 5px;
+    border: none;
+}
+.spin{
+    color: aqua;
+    font-size: 25px;
+}
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+</style>
+    <h1 class="head"> BUTTON LOADING ANIMATION </h1>
+    <button class="btn" id="loadButton" onclick="startLoading()"><b>Add to cart</b></button>
+    <div id="loadingContainer"></div>
+<script>
+  function startLoading() {
+    const loadButton = document.getElementById('loadButton');
+    const loadingContainer = document.getElementById('loadingContainer');
+
+    // Hide the load button
+    loadButton.style.display = 'none';
+
+    // button loading animation
+    // Show the loading spinner
+    const spin = document.createElement('button');
+    spin.className="loading";
+    spin.style.fontSize="25px";
+    loadingContainer.appendChild(spin);
+    const loader = document.createElement('span');
+    spin.textContent="Loading..."
+    loader.className = 'spinner-border spinner-border-sm spin';
+    // loader.textContent="Loading..."
+    spin.appendChild(loader);
+    
+
+    // Simulate some asynchronous task completion
+    setTimeout(() => {
+        // Hide the loading spinner
+        loadingContainer.innerHTML = '';
+        // Show the response button
+        const responseButton = document.createElement('button');
+        responseButton.textContent = ' Done';
+        // responseButton.className="glyphicon glyphicon-ok-circle done";
+        responseButton.className="fa fa-check-circle done";
+        responseButton.style.fontSize="25px";
+        responseButton.onclick = showLoadButton;
+        loadingContainer.appendChild(responseButton);
+    }, 3000);
+}
+
+function showLoadButton() {
+    const loadButton = document.getElementById('loadButton');
+    const loadingContainer = document.getElementById('loadingContainer');
+
+    // Hide the response button
+    // loadingButton.innerHTML = '';
+    loadButton.style.display = 'none';
+    // Show the load button
+    loadButton.style.display = 'inline-block';
+}
+</script>
+</body>
